@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TJ Brown — Coach · Private Lessons · Little Rock, Arkansas</title>
+<meta name="description" content="Hey, I'm TJ. UFC veteran, single dad, and full-time coach in Little Rock, Arkansas. Private lessons in striking, BJJ, and MMA — kids and adults welcome.">
+<meta name="keywords" content="TJ Brown, Downtown TJ Brown, UFC coach, MMA, Little Rock, Arkansas, private lessons, kids martial arts, BJJ, jiu jitsu, kickboxing">
+
+<meta property="og:title" content="TJ Brown — Coach · Private Lessons · Little Rock">
+<meta property="og:description" content="UFC veteran teaching out of Little Rock, Arkansas. Kids, adults, beginners, competitors — everyone's welcome on the mat.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   DESIGN TOKENS — White + Blue Outlines + Red Accents
+   ========================================================================== */
+:root {
+  --bg-white: #FFFFFF;
+  --bg-soft: #F5F7FB;
+  --bg-tint: #EEF2FB;
+  --ink: #0B1736;
+  --ink-body: #2C3654;
+  --ink-muted: #6B7589;
+  --ink-soft: #98A1B5;
+
+  --blue: #1E3A8A;
+  --blue-strong: #122E7A;
+  --blue-soft: #DCE5F7;
+  --blue-line: #C7D2EC;
+
+  --red: #0B0B0B;        /* accent (was red, now near-black) */
+  --red-dark: #000000;   /* hover state */
+  --red-soft: #F1F2F4;   /* light tint background */
+
+  --shadow-sm: 0 2px 6px rgba(11, 23, 54, 0.05);
+  --shadow-md: 0 10px 30px rgba(11, 23, 54, 0.08);
+  --shadow-lg: 0 20px 50px rgba(11, 23, 54, 0.12);
+
+  --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-condensed: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --max-width: 1200px;
+  --gutter: 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-white);
+  color: var(--ink-body);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, select, textarea { font-family: inherit; font-size: inherit; }
+
+/* ==========================================================================
+   UTILITY
+   ========================================================================== */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 1.75rem;
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase;
+  border: 2px solid transparent;
+  transition: all 0.2s ease; cursor: pointer;
+  border-radius: 4px;
+}
+.btn-primary { background: var(--red); color: var(--bg-white); border-color: var(--red); }
+.btn-primary:hover {
+  background: var(--red-dark); border-color: var(--red-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+.btn-outline { background: var(--bg-white); color: var(--blue); border-color: var(--blue); }
+.btn-outline:hover { background: var(--blue); color: var(--bg-white); }
+.eyebrow {
+  font-family: var(--font-condensed); font-weight: 500;
+  font-size: 0.8rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.95; letter-spacing: 0.02em;
+  margin-bottom: 1.25rem; color: var(--ink);
+}
+.section-title .accent { color: var(--red); }
+.lead {
+  font-size: 1.15rem; color: var(--ink-muted); max-width: 56ch;
+}
+section { padding: 5.5rem 0; }
+@media (max-width: 720px) { section { padding: 3.5rem 0; } }
+
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 2px solid var(--blue);
+}
+.nav-inner {
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 1rem var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+}
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem; letter-spacing: 0.05em;
+  color: var(--ink); display: flex; align-items: center; gap: 0.5rem; white-space: nowrap;
+}
+.brand-mark { width: 10px; height: 10px; background: var(--red); display: inline-block; }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-family: var(--font-condensed); font-weight: 500;
+  font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-body); transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--red); }
+.nav-cta {
+  padding: 0.65rem 1.25rem; background: var(--red); color: var(--bg-white);
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
+  transition: all 0.2s; border-radius: 4px;
+}
+.nav-cta:hover { background: var(--red-dark); color: var(--bg-white); }
+.menu-toggle { display: none; width: 28px; height: 22px; position: relative; z-index: 102; }
+.menu-toggle span {
+  display: block; width: 100%; height: 2px; background: var(--ink);
+  position: absolute; left: 0; transition: all 0.25s ease;
+}
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 10px; }
+.menu-toggle span:nth-child(3) { top: 20px; }
+.menu-toggle.is-open span:nth-child(1) { top: 10px; transform: rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:nth-child(3) { top: 10px; transform: rotate(-45deg); }
+
+@media (max-width: 880px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    position: fixed; top: 0; right: 0;
+    width: 80%; max-width: 320px; height: 100vh;
+    background: var(--bg-white);
+    flex-direction: column; justify-content: center; align-items: flex-start;
+    padding: 4rem 2rem; gap: 2rem;
+    transform: translateX(100%); transition: transform 0.3s ease;
+    border-left: 2px solid var(--blue); box-shadow: var(--shadow-lg);
+  }
+  .nav-links.is-open { transform: translateX(0); }
+  .nav-links a { font-size: 1.1rem; color: var(--ink); }
+  .nav-cta { display: none; }
+}
+
+/* ==========================================================================
+   HERO — friendly, laid-back
+   ========================================================================== */
+.hero {
+  min-height: 88vh;
+  position: relative;
+  display: flex; align-items: center;
+  padding: 7rem 0 4rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 25%, rgba(11, 23, 54, 0.04), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(30, 58, 138, 0.05), transparent 55%),
+    var(--bg-white);
+}
+.hero::after {
+  content: ''; position: absolute;
+  right: -120px; bottom: -120px;
+  width: 360px; height: 360px;
+  border: 2px solid var(--blue);
+  transform: rotate(45deg); opacity: 0.07; pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 4rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-greeting {
+  font-family: var(--font-condensed); font-weight: 500;
+  font-size: 0.95rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-greeting::before {
+  content: ''; width: 32px; height: 2px; background: var(--red); display: inline-block;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.92; letter-spacing: 0.01em;
+  margin-bottom: 1.5rem; text-transform: uppercase;
+  color: var(--ink);
+}
+.hero h1 .wave { color: var(--red); }
+.hero h1 .last {
+  display: inline-block; position: relative;
+}
+.hero h1 .last::after {
+  content: ''; position: absolute;
+  bottom: 0.05em; left: 0; width: 100%; height: 8px;
+  background: var(--red); opacity: 0.18; z-index: -1;
+}
+.hero-sub {
+  font-size: 1.2rem; color: var(--ink-body);
+  max-width: 50ch; margin: 1rem 0 2.25rem;
+  line-height: 1.65;
+}
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.photo-frame {
+  position: relative;
+  border: 2px solid var(--blue);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background:
+    repeating-linear-gradient(45deg,
+      var(--bg-tint),
+      var(--bg-tint) 12px,
+      var(--bg-soft) 12px,
+      var(--bg-soft) 24px);
+}
+.photo-frame::before {
+  content: ''; position: absolute;
+  top: -2px; left: -2px;
+  width: 80px; height: 6px; background: var(--red);
+  z-index: 2;
+}
+.photo-frame::after {
+  content: ''; position: absolute;
+  bottom: -2px; right: -2px;
+  width: 80px; height: 6px; background: var(--red);
+  z-index: 2;
+}
+.photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  position: relative; z-index: 1;
+  display: block;
+}
+.photo-frame img[data-failed] { display: none; }
+.photo-placeholder {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  text-align: center; padding: 2rem;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+}
+.photo-placeholder .icon {
+  width: 64px; height: 64px;
+  border: 2px solid var(--blue); border-radius: 50%;
+  display: grid; place-items: center;
+  margin: 0 auto 1rem;
+  background: var(--bg-white);
+}
+.photo-placeholder .label {
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.5rem;
+}
+.photo-placeholder .filename {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem; color: var(--red);
+  background: var(--bg-white); padding: 4px 10px;
+  display: inline-block; margin-top: 0.5rem;
+  border: 1px solid var(--blue-line);
+}
+.photo-placeholder .hint {
+  font-size: 0.85rem; color: var(--ink-muted);
+  margin-top: 0.75rem; max-width: 26ch;
+}
+.hero-portrait { aspect-ratio: 3 / 4; }
+.about-photo { aspect-ratio: 16 / 9; margin-top: 1.5rem; }
+.photo-frame img { object-position: center 25%; }
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-portrait { max-width: 380px; margin: 0 auto; }
+}
+
+/* ==========================================================================
+   QUICK BIO STRIP
+   ========================================================================== */
+.bio-strip {
+  background: var(--ink);
+  color: var(--bg-white);
+  padding: 2rem 0;
+}
+.bio-strip-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2rem; text-align: center;
+}
+.bio-strip-grid div {
+  border-right: 1px solid rgba(255,255,255,0.15);
+  padding: 0 1rem;
+}
+.bio-strip-grid div:last-child { border-right: none; }
+.bio-strip-grid .num {
+  font-family: var(--font-display);
+  font-size: 2.2rem; line-height: 1;
+  color: var(--bg-white); margin-bottom: 0.25rem;
+}
+.bio-strip-grid .lbl {
+  font-family: var(--font-condensed); font-weight: 500;
+  font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+@media (max-width: 720px) {
+  .bio-strip-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+  .bio-strip-grid div:nth-child(2) { border-right: none; }
+}
+
+/* ==========================================================================
+   ABOUT / WHO IS TJ
+   ========================================================================== */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 4rem; align-items: start;
+}
+.about-headline { position: sticky; top: 120px; }
+.about-body p {
+  font-size: 1.1rem; line-height: 1.8;
+  color: var(--ink-body); margin-bottom: 1.5rem;
+}
+.about-body p:first-child::first-letter {
+  font-family: var(--font-display); font-size: 3.5rem;
+  float: left; line-height: 0.85; padding: 0.1em 0.15em 0 0;
+  color: var(--red);
+}
+.about-quirks {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem; margin-top: 2rem;
+}
+.quirk {
+  background: var(--bg-soft);
+  border-left: 4px solid var(--blue);
+  padding: 0.85rem 1rem;
+  display: flex; gap: 0.85rem; align-items: center;
+}
+.quirk .icon {
+  font-family: var(--font-display); font-size: 1.4rem;
+  color: var(--red); flex-shrink: 0;
+}
+.quirk .text {
+  font-family: var(--font-condensed); font-weight: 500;
+  font-size: 0.9rem; letter-spacing: 0.05em;
+  color: var(--ink);
+}
+@media (max-width: 880px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-headline { position: static; }
+  .about-quirks { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   TRAIN WITH ME — the main pitch, big and friendly
+   ========================================================================== */
+.train {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--blue-line);
+  border-bottom: 1px solid var(--blue-line);
+}
+.train-intro {
+  text-align: center; margin-bottom: 4rem; padding: 0 1rem;
+}
+.train-intro .lead { margin: 0 auto; }
+.lessons-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-bottom: 4rem;
+}
+.lesson-card {
+  background: var(--bg-white);
+  border: 2px solid var(--blue);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  border-radius: 4px;
+}
+.lesson-card:hover {
+  border-color: var(--red); transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.lesson-card.featured { border-color: var(--red); }
+.lesson-card.featured::before {
+  content: 'MOST POPULAR'; position: absolute;
+  top: -2px; right: -2px;
+  background: var(--red); color: var(--bg-white);
+  font-family: var(--font-condensed); font-weight: 700;
+  font-size: 0.65rem; letter-spacing: 0.18em;
+  padding: 5px 10px;
+}
+.lesson-card .lesson-icon {
+  width: 48px; height: 48px;
+  background: var(--blue); color: var(--bg-white);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.lesson-card.featured .lesson-icon { background: var(--red); }
+.lesson-card h3 {
+  font-family: var(--font-display);
+  font-size: 2rem; line-height: 1;
+  margin-bottom: 0.75rem; color: var(--ink);
+}
+.lesson-card .price {
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 1.25rem;
+}
+.lesson-card .desc {
+  color: var(--ink-muted); font-size: 0.95rem;
+  margin-bottom: 1.25rem; line-height: 1.6;
+}
+.lesson-card ul { list-style: none; margin-bottom: 1.5rem; }
+.lesson-card li {
+  padding: 0.55rem 0 0.55rem 1.5rem;
+  position: relative; font-size: 0.95rem; color: var(--ink-body);
+  border-bottom: 1px solid var(--blue-line);
+}
+.lesson-card li:last-child { border-bottom: none; }
+.lesson-card li::before {
+  content: '✓'; position: absolute; left: 0;
+  color: var(--blue); font-weight: 700; font-size: 1rem; top: 0.5rem;
+}
+.lesson-card .book-link {
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--red);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px; transition: border-color 0.2s;
+}
+.lesson-card .book-link:hover { border-bottom-color: var(--red); }
+
+.train-promise {
+  background: var(--bg-white);
+  border: 2px solid var(--blue);
+  padding: 2.5rem;
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 2rem; align-items: center;
+  border-radius: 4px;
+}
+.train-promise .icon-block {
+  width: 64px; height: 64px;
+  background: var(--red); color: var(--bg-white);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-size: 1.75rem;
+}
+.train-promise h4 {
+  font-family: var(--font-display); font-size: 1.75rem;
+  color: var(--ink); margin-bottom: 0.25rem;
+}
+.train-promise p {
+  color: var(--ink-muted); font-size: 0.95rem; margin: 0;
+}
+@media (max-width: 880px) {
+  .lessons-grid { grid-template-columns: 1fr; }
+  .train-promise { grid-template-columns: 1fr; text-align: center; }
+  .train-promise .icon-block { margin: 0 auto; }
+}
+
+/* ==========================================================================
+   THE STORY (smaller, friendly)
+   ========================================================================== */
+.story-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 4rem; align-items: start;
+}
+.story-headline { position: sticky; top: 120px; }
+.story-body p {
+  font-size: 1.05rem; line-height: 1.75;
+  color: var(--ink-body); margin-bottom: 1.25rem;
+}
+.pullquote {
+  border-left: 4px solid var(--red);
+  padding: 1rem 0 1rem 1.75rem;
+  margin: 2rem 0;
+  font-family: var(--font-condensed); font-weight: 400;
+  font-size: 1.4rem; line-height: 1.35;
+  color: var(--ink); font-style: italic;
+}
+.pullquote cite {
+  display: block; margin-top: 0.75rem;
+  font-family: var(--font-body); font-size: 0.85rem; font-style: normal;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--blue); font-weight: 600;
+}
+@media (max-width: 880px) {
+  .story-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .story-headline { position: static; }
+}
+
+/* ==========================================================================
+   HIGHLIGHTS — condensed, fun
+   ========================================================================== */
+.highlights {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--blue-line);
+  border-bottom: 1px solid var(--blue-line);
+}
+.highlights-header { text-align: center; margin-bottom: 3rem; }
+.highlights-header .lead { margin: 0 auto; }
+.highlights-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.highlight-card {
+  background: var(--bg-white);
+  border: 2px solid var(--blue);
+  padding: 1.75rem;
+  border-radius: 4px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.highlight-card:hover {
+  transform: translateY(-3px); box-shadow: var(--shadow-md);
+}
+.highlight-card .tag {
+  display: inline-block;
+  font-family: var(--font-condensed); font-weight: 700;
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--bg-white); background: var(--red);
+  padding: 4px 10px; margin-bottom: 1rem;
+}
+.highlight-card h4 {
+  font-family: var(--font-display); font-size: 1.6rem;
+  line-height: 1.05; margin-bottom: 0.5rem; color: var(--ink);
+}
+.highlight-card p {
+  color: var(--ink-muted); font-size: 0.95rem; line-height: 1.55;
+}
+@media (max-width: 720px) {
+  .highlights-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   FAQ — friendly, fun
+   ========================================================================== */
+.faq-intro { text-align: center; margin-bottom: 3rem; }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  border: 2px solid var(--blue);
+  margin-bottom: 0.85rem;
+  background: var(--bg-white);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item[open] { border-color: var(--red); }
+.faq-item summary {
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 1.05rem; letter-spacing: 0.02em;
+  color: var(--ink);
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-display); font-size: 1.8rem;
+  color: var(--red); line-height: 1; flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after { content: '–'; }
+.faq-item .answer {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--ink-body); font-size: 0.98rem; line-height: 1.65;
+}
+
+/* ==========================================================================
+   MEDIA / PRESS
+   ========================================================================== */
+.media-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-top: 3rem;
+}
+.media-card {
+  background: var(--bg-white);
+  border: 2px solid var(--blue);
+  padding: 1.75rem;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  border-radius: 4px;
+}
+.media-card:hover {
+  border-color: var(--red); transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.media-card .source {
+  font-family: var(--font-condensed); font-weight: 700;
+  font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 0.75rem;
+}
+.media-card h4 {
+  font-family: var(--font-condensed); font-weight: 500;
+  font-size: 1.1rem; line-height: 1.35;
+  margin-bottom: 1rem; flex-grow: 1; color: var(--ink);
+}
+.media-card .date { font-size: 0.85rem; color: var(--ink-muted); }
+.media-card .read {
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--blue); margin-top: 1rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.media-card .read::after { content: '→'; transition: transform 0.2s; }
+.media-card:hover .read::after { transform: translateX(4px); }
+@media (max-width: 720px) { .media-grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   BOOK / FORM
+   ========================================================================== */
+.book {
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(11, 23, 54, 0.04), transparent 55%),
+    radial-gradient(ellipse at 0% 90%, rgba(30, 58, 138, 0.06), transparent 55%),
+    var(--bg-white);
+  border-top: 1px solid var(--blue-line);
+}
+.book-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+.book-sidebar h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  line-height: 0.95; margin-bottom: 1.25rem; color: var(--ink);
+}
+.book-sidebar p {
+  color: var(--ink-body); font-size: 1.05rem;
+  line-height: 1.7; margin-bottom: 1.25rem;
+}
+.book-checklist { list-style: none; margin-top: 2rem; }
+.book-checklist li {
+  padding: 0.85rem 0 0.85rem 2rem; position: relative;
+  font-family: var(--font-condensed); font-weight: 500;
+  font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--ink-body); border-bottom: 1px solid var(--blue-line);
+}
+.book-checklist li::before {
+  content: '✓'; position: absolute; left: 0;
+  color: var(--red); font-weight: 700;
+}
+.book-form {
+  background: var(--bg-white);
+  border: 2px solid var(--blue);
+  padding: 2.5rem;
+  position: relative; box-shadow: var(--shadow-md);
+  border-radius: 4px;
+}
+.book-form::before {
+  content: ''; position: absolute;
+  top: -2px; left: -2px; width: 90px; height: 5px; background: var(--red);
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.field { display: flex; flex-direction: column; }
+.field.full { grid-column: 1 / -1; }
+.field label {
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 0.5rem;
+}
+.field label .req { color: var(--red); }
+.field input, .field select, .field textarea {
+  background: var(--bg-white);
+  border: 1.5px solid var(--blue-line);
+  color: var(--ink); padding: 0.85rem 1rem;
+  font-size: 0.95rem; width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  border-radius: 3px;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+}
+.field textarea { resize: vertical; min-height: 120px; font-family: inherit; }
+.field select {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%231E3A8A' stroke-width='2'/></svg>");
+  background-repeat: no-repeat; background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+.form-actions {
+  margin-top: 2rem; display: flex; align-items: center;
+  gap: 1.5rem; flex-wrap: wrap;
+}
+.form-actions .helper { font-size: 0.85rem; color: var(--ink-muted); }
+.form-message {
+  margin-top: 1.5rem; padding: 1rem 1.25rem;
+  border-left: 4px solid var(--blue); background: var(--bg-tint);
+  font-size: 0.95rem; display: none; color: var(--ink);
+}
+.form-message.is-visible { display: block; }
+.form-message.is-error { border-color: var(--red); background: var(--red-soft); }
+@media (max-width: 880px) {
+  .book-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .book-form { padding: 1.5rem; }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  background: var(--ink); color: var(--bg-white);
+  border-top: 4px solid var(--blue); padding: 4rem 0 2rem;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand .brand { color: var(--bg-white); font-size: 2.25rem; margin-bottom: 1rem; }
+.footer-brand p {
+  font-size: 0.95rem; color: rgba(255,255,255,0.7);
+  max-width: 36ch; line-height: 1.6;
+}
+.footer h5 {
+  font-family: var(--font-condensed); font-weight: 700;
+  font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--bg-white); margin-bottom: 1.25rem;
+}
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 0.65rem; font-size: 0.95rem; }
+.footer a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+.footer a:hover { color: var(--bg-white); }
+.socials { display: flex; gap: 0.75rem; }
+.socials a {
+  width: 42px; height: 42px;
+  border: 2px solid rgba(255,255,255,0.2);
+  display: grid; place-items: center;
+  font-family: var(--font-condensed); font-weight: 700;
+  font-size: 0.75rem; letter-spacing: 0.1em;
+  transition: all 0.2s; color: var(--bg-white);
+}
+.socials a:hover { border-color: var(--bg-white); background: var(--bg-white); color: var(--ink); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem; display: flex;
+  justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+  font-size: 0.85rem; color: rgba(255,255,255,0.5);
+}
+@media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ==========================================================================
+   REVEAL
+   ========================================================================== */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand"><span class="brand-mark"></span>DOWNTOWN TJ BROWN</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#train">Train</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#media">Press</a></li>
+      <li><a href="#book" class="nav-cta">Book a Session</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO — friendly
+     ============================================================ -->
+<header class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <div class="hero-greeting">Hey, I'm TJ</div>
+        <h1>
+          Come <span class="wave">train</span><br>
+          with <span class="last">me.</span>
+        </h1>
+        <p class="hero-sub">
+          UFC veteran, lifelong Arkansan, full-time dad and coach. I teach private lessons out of Little Rock — striking, grappling, MMA, kids classes, fight prep. No ego, no pressure, just good work on the mat.
+        </p>
+        <div class="hero-ctas">
+          <a href="#book" class="btn btn-primary">Book a Session →</a>
+          <a href="#train" class="btn btn-outline">What I Teach</a>
+        </div>
+      </div>
+      <div class="photo-frame hero-portrait reveal">
+        <img src="images/tj-hero.webp" alt="TJ Brown" onerror="this.setAttribute('data-failed','true')">
+        <div class="photo-placeholder">
+          <div>
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <div class="label">Action Photo</div>
+            <div class="filename">images/tj-hero.jpg</div>
+            <div class="hint">Walkout, fight night, or stance shot — anything that says "fighter."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     QUICK BIO STRIP
+     ============================================================ -->
+<section class="bio-strip" style="padding: 2rem 0;">
+  <div class="container">
+    <div class="bio-strip-grid">
+      <div>
+        <div class="num">12+</div>
+        <div class="lbl">Years Coaching</div>
+      </div>
+      <div>
+        <div class="num">UFC</div>
+        <div class="lbl">Veteran</div>
+      </div>
+      <div>
+        <div class="num">BJJ</div>
+        <div class="lbl">Black Belt</div>
+      </div>
+      <div>
+        <div class="num">501</div>
+        <div class="lbl">Little Rock, AR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT / WHO IS TJ
+     ============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-headline reveal">
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">A little about <span class="accent">me.</span></h2>
+        <p class="lead">Coach. Dad. Arkansan. Yes, I fought in the UFC — but on the mat, what matters is what we work on today.</p>
+      </div>
+      <div class="about-body reveal">
+        <p>
+          I'm TJ Brown. Born in Pine Bluff, raised in Arkansas, and I've called Little Rock home for over a decade. My day-to-day is pretty simple: teach in the mornings and afternoons, hang out with my son Kyler, and try to leave the gym a little better than I found it.
+        </p>
+        <p>
+          I came up at Westside MMA in Little Rock under Coach Roli Delgado, who later promoted me to BJJ black belt. I had a twelve-year career as a pro fighter — competed in the UFC from 2020 to 2024 — but honestly the best part of the journey has been the people I've gotten to work with along the way. Teaching is where I'm at my happiest.
+        </p>
+        <p>
+          If you're new to martial arts, welcome — I love working with beginners. If you're an active competitor and need a sharp pair of eyes, let's talk about your camp. If you're a parent looking for something positive for your kid, my kids' lessons are some of my favorite hours of the week.
+        </p>
+        <div class="about-quirks">
+          <div class="quirk"><span class="icon">★</span><span class="text">Single dad</span></div>
+          <div class="quirk"><span class="icon">★</span><span class="text">BJJ Black Belt under Roli Delgado</span></div>
+          <div class="quirk"><span class="icon">★</span><span class="text">12-year pro fighting career</span></div>
+          <div class="quirk"><span class="icon">★</span><span class="text">Family man &amp; weekend fisherman</span></div>
+        </div>
+
+        <div class="photo-frame about-photo">
+          <img src="images/tj-coaching.jpg" alt="TJ coaching" onerror="this.setAttribute('data-failed','true')">
+          <div class="photo-placeholder">
+            <div>
+              <div class="icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div class="label">Coaching Photo</div>
+              <div class="filename">images/tj-coaching.jpg</div>
+              <div class="hint">TJ working with a student, holding pads, or teaching a kids' class.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRAIN WITH ME — the main section
+     ============================================================ -->
+<section class="train" id="train">
+  <div class="container">
+    <div class="train-intro reveal">
+      <div class="eyebrow">Train With Me</div>
+      <h2 class="section-title">What we'll <span class="accent">work on.</span></h2>
+      <p class="lead">
+        Pick the option that fits — or send me a message and we'll figure it out together. All experience levels welcome. I've got patient hands.
+      </p>
+    </div>
+
+    <div class="lessons-grid reveal">
+      <div class="lesson-card">
+        <div class="lesson-icon">1:1</div>
+        <h3>1-on-1 Private</h3>
+        <div class="price">By appointment</div>
+        <p class="desc">Just you and me on the mat for an hour. You set the focus — striking, grappling, MMA, all of it.</p>
+        <ul>
+          <li>60 minutes, your goals</li>
+          <li>Video review available</li>
+          <li>All levels welcome</li>
+        </ul>
+        <a href="#book" class="book-link">Book a session →</a>
+      </div>
+
+      <div class="lesson-card featured">
+        <div class="lesson-icon">KID</div>
+        <h3>Kids Lessons</h3>
+        <div class="price">Ages 6 to 14</div>
+        <p class="desc">Fundamentals taught the right way. Discipline and confidence, no chaos. Parents are welcome to watch.</p>
+        <ul>
+          <li>Striking &amp; jiu-jitsu fundamentals</li>
+          <li>Safe, fun, structured</li>
+          <li>Friendly check-ins with parents</li>
+        </ul>
+        <a href="#book" class="book-link">Book a session →</a>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-icon">GRP</div>
+        <h3>Small Group</h3>
+        <div class="price">2–4 athletes</div>
+        <p class="desc">Bring your training partners, your kid's team, or a few friends. Custom curriculum for the group.</p>
+        <ul>
+          <li>Friends, family, or teammates</li>
+          <li>Better $/head than private</li>
+          <li>Seminars available</li>
+        </ul>
+        <a href="#book" class="book-link">Book a session →</a>
+      </div>
+    </div>
+
+    <div class="train-promise reveal">
+      <div class="icon-block">✓</div>
+      <div>
+        <h4>The Promise</h4>
+        <p>You'll leave every session with one thing you didn't know how to do before. No fluff, no filler — just clean technique and honest reps. If you don't, the next one's on me.</p>
+      </div>
+      <a href="#book" class="btn btn-primary">Let's Go →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE STORY
+     ============================================================ -->
+<section id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-headline reveal">
+        <div class="eyebrow">The Story</div>
+        <h2 class="section-title">Why I <span class="accent">coach.</span></h2>
+        <p class="lead">There's a longer story underneath all this — and it's why teaching is more important to me than fighting ever was.</p>
+      </div>
+      <div class="story-body reveal">
+        <p>
+          I was eighteen, off-track at the start of college football, and about to be a father for the first time. I walked into a gym in Little Rock not really knowing what I was doing. A couple months later I won my first amateur fight in ten seconds. I was hooked.
+        </p>
+        <p>
+          I grew up without my dad around. I didn't meet him for the first time until I was 32 years old. So when my son Kyler showed up, I made one promise — that he'd never wonder where I was. That promise has shaped everything else: how I train, how I coach, why I stayed sober, why I do this for a living.
+        </p>
+        <div class="pullquote">
+          "It's a beautiful thing to be able to break that chain. My son is never gonna ask those questions."
+          <cite>— TJ, on UFC.com</cite>
+        </div>
+        <p>
+          Coaching is how I pay it forward. Every kid that walks into one of my classes, every adult that finally gets brave enough to try this stuff — that's where the work actually happens. The fight career was great. This part is better.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HIGHLIGHTS — condensed
+     ============================================================ -->
+<section class="highlights">
+  <div class="container">
+    <div class="highlights-header reveal">
+      <div class="eyebrow">Highlights</div>
+      <h2 class="section-title">A few <span class="accent">cool moments.</span></h2>
+      <p class="lead">The fight career in three bites. Full record on UFC.com, ESPN, Wikipedia — all linked at the bottom.</p>
+    </div>
+    <div class="highlights-grid reveal">
+      <div class="highlight-card">
+        <span class="tag">$50K Bonus</span>
+        <h4>Performance of the Night</h4>
+        <p>Arm-triangle submission of Erik Silva in round three at UFC 282. First UFC finish — with my son cageside.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="tag">$50K Bonus</span>
+        <h4>Fight of the Night</h4>
+        <p>Battle with Bill Algeo at UFC Kansas City. Awarded for the kind of back-and-forth fight fans love.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="tag">SportsCenter Top 10</span>
+        <h4>The Head Kick</h4>
+        <p>LFA 67 head-kick KO of Ken Beverly hit #4 on SportsCenter's Top 10. Still the favorite finish of my career.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ — fun and informative
+     ============================================================ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-intro reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="section-title">Good <span class="accent">questions.</span></h2>
+      <p class="lead">Stuff people ask me all the time. If yours isn't here, just shoot me a message.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>I've never trained before. Is that okay?</summary>
+        <div class="answer">More than okay — it's my favorite kind of student. The vast majority of people I teach are total beginners. Wear something comfortable, bring water, and show up. I'll handle the rest.</div>
+      </details>
+      <details class="faq-item">
+        <summary>My kid wants to try — what's the right age?</summary>
+        <div class="answer">I work with kids ages 6 to 14. Younger ones are about discipline, listening, and having fun. Older kids get more technique and structure. Parents are welcome to watch every session — I want you to feel comfortable.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What should I wear?</summary>
+        <div class="answer">Athletic clothes, no shoes on the mat. If we're doing BJJ, I can lend you a gi. Bring water and a towel. That's it.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Where are the sessions held?</summary>
+        <div class="answer">Little Rock, Arkansas. I'll send you the exact address when we lock in your time. For seminars or out-of-state work, I travel — just ask.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How much does it cost?</summary>
+        <div class="answer">Depends on the format (private, kids, small group, fight camp) and how often you want to train. Send me a booking request with your goals and I'll come back with options that make sense for you.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Are you still fighting?</summary>
+        <div class="answer">Off and on. Most of my time goes to coaching now. If I'm in camp I'll let you know — but the lessons keep rolling.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do you do seminars?</summary>
+        <div class="answer">Yes — at your gym, my gym, anywhere. Reach out through the booking form and tell me what your group wants to focus on. I'll travel for the right fit.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MEDIA / PRESS
+     ============================================================ -->
+<section id="media">
+  <div class="container">
+    <div class="highlights-header reveal">
+      <div class="eyebrow">Press &amp; Media</div>
+      <h2 class="section-title">Some <span class="accent">good reads.</span></h2>
+      <p class="lead">Long-form features and interviews if you want to dig deeper.</p>
+    </div>
+
+    <div class="media-grid reveal">
+      <a href="https://www.youtube.com/watch?v=9TJ8Wm9H0Uk" target="_blank" rel="noopener" class="media-card">
+        <div class="source">The Testimony Podcast</div>
+        <h4>TJ Brown — The Full Story</h4>
+        <div class="date">YouTube · Long-form interview</div>
+        <span class="read">Watch the episode</span>
+      </a>
+      <a href="https://www.ufc.com/news/tj-brown-broke-the-chain-featherweight-ufc-282-blachowicz-vs-ankalaev" target="_blank" rel="noopener" class="media-card">
+        <div class="source">UFC.com</div>
+        <h4>TJ Brown Broke The Chain</h4>
+        <div class="date">December 2022</div>
+        <span class="read">Read feature</span>
+      </a>
+      <a href="https://www.ufc.com/news/tj-brown-knows-exactly-what-hes-fighting-for-ufc-fight-night-yusuff-barboza" target="_blank" rel="noopener" class="media-card">
+        <div class="source">UFC.com</div>
+        <h4>TJ Brown Knows Exactly What He's Fighting For</h4>
+        <div class="date">October 2023</div>
+        <span class="read">Read feature</span>
+      </a>
+      <a href="https://www.arkansasonline.com/news/2025/may/22/tj-brown-offers-guidance-to-aspiring-mixed/" target="_blank" rel="noopener" class="media-card">
+        <div class="source">Arkansas Democrat-Gazette</div>
+        <h4>TJ Brown Offers Guidance to Aspiring Mixed Martial Artists in Arkansas</h4>
+        <div class="date">May 2025</div>
+        <span class="read">Read article</span>
+      </a>
+      <a href="https://cagesidepress.com/2022/11/29/ttp-ep-354-marcelo-rojo-tj-brown-ufc-orlando/" target="_blank" rel="noopener" class="media-card">
+        <div class="source">Top Turtle MMA Podcast</div>
+        <h4>TTP Ep. 354 — On UFC 282 &amp; the Origin of "Downtown"</h4>
+        <div class="date">November 2022</div>
+        <span class="read">Listen</span>
+      </a>
+      <a href="https://www.ufc.com/news/how-tj-brown-stays-hungry-ufc-fight-night-kansas-city" target="_blank" rel="noopener" class="media-card">
+        <div class="source">UFC.com</div>
+        <h4>How TJ Brown Stays Hungry</h4>
+        <div class="date">April 2023</div>
+        <span class="read">Read feature</span>
+      </a>
+      <a href="https://www.youtube.com/watch?v=ZcbB10uWpX4" target="_blank" rel="noopener" class="media-card">
+        <div class="source">UFC · Joe Rogan</div>
+        <h4>UFC 282 Octagon Interview with Joe Rogan</h4>
+        <div class="date">December 2022</div>
+        <span class="read">Watch</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BOOK / SCHEDULING
+     ============================================================ -->
+<section class="book" id="book">
+  <div class="container">
+    <div class="book-grid">
+      <div class="book-sidebar reveal">
+        <div class="eyebrow">Book a Session</div>
+        <h2>Let's get on the mat.</h2>
+        <p>
+          Tell me a bit about what you're looking for and I'll get back to you within 24 hours to lock in a time. Sessions are held in Little Rock, Arkansas. Travel and seminar requests welcome.
+        </p>
+        <ul class="book-checklist">
+          <li>24-hour response time</li>
+          <li>Flexible scheduling</li>
+          <li>Kids, adults, beginners, fighters</li>
+          <li>Travel available for seminars</li>
+        </ul>
+      </div>
+
+      <form class="book-form reveal" id="bookForm" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="firstName">First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(501) 555-0123">
+          </div>
+          <div class="field">
+            <label for="sessionType">Session Type <span class="req">*</span></label>
+            <select id="sessionType" name="sessionType" required>
+              <option value="">Select…</option>
+              <option value="private">1-on-1 Private</option>
+              <option value="kids">Kids Lesson (ages 6–14)</option>
+              <option value="group">Small Group (2–4)</option>
+              <option value="fight-prep">Fight Camp / Fight Prep</option>
+              <option value="seminar">Seminar / Speaking</option>
+              <option value="other">Other / Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="experience">Experience Level <span class="req">*</span></label>
+            <select id="experience" name="experience" required>
+              <option value="">Select…</option>
+              <option value="beginner">Total beginner</option>
+              <option value="some">Some experience — under 1 year</option>
+              <option value="intermediate">Intermediate — 1–3 years</option>
+              <option value="advanced">Advanced — 3+ years</option>
+              <option value="competitor">Active competitor</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="preferredDate">Preferred Date</label>
+            <input type="date" id="preferredDate" name="preferredDate">
+          </div>
+          <div class="field">
+            <label for="timeWindow">Preferred Time</label>
+            <select id="timeWindow" name="timeWindow">
+              <option value="">No preference</option>
+              <option value="morning">Morning (6am–11am)</option>
+              <option value="midday">Midday (11am–2pm)</option>
+              <option value="afternoon">Afternoon (2pm–5pm)</option>
+              <option value="evening">Evening (5pm–9pm)</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="goals">Tell Me About You <span class="req">*</span></label>
+            <textarea id="goals" name="goals" required placeholder="What are you hoping to get out of training? Any prior experience, injuries, kid's age, fight dates — whatever you want me to know."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Request →</button>
+          <span class="helper">No spam. Goes straight to TJ.</span>
+        </div>
+        <div class="form-message" id="formMessage"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand"><span class="brand-mark"></span>DOWNTOWN TJ BROWN</div>
+        <p>Private MMA, BJJ, &amp; striking coaching in Little Rock, Arkansas. Kids and adults welcome on the mat.</p>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#train">Train With Me</a></li>
+          <li><a href="#story">My Story</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#book">Book a Session</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Find Me</h5>
+        <ul>
+          <li><a href="https://www.ufc.com/athlete/tj-brown" target="_blank" rel="noopener">UFC.com Profile</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/T.J._Brown" target="_blank" rel="noopener">Wikipedia</a></li>
+          <li><a href="https://www.sherdog.com/fighter/TJ-Brown-172347" target="_blank" rel="noopener">Sherdog</a></li>
+          <li><a href="https://www.espn.com/mma/fighter/_/id/4063667/tj-brown" target="_blank" rel="noopener">ESPN MMA</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <div class="socials">
+          <a href="https://www.instagram.com/downtowntjbrown/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> T.J. Brown. All rights reserved.</div>
+      <div>Little Rock, Arkansas · Available worldwide for seminars</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('menuToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('is-open');
+  links.classList.toggle('is-open');
+});
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => {
+    toggle.classList.remove('is-open');
+    links.classList.remove('is-open');
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// =============================================================
+// BOOKING FORM — Gmail-ready (demo mode until endpoint is set)
+// See README.md for Google Apps Script setup.
+// =============================================================
+const GMAIL_ENDPOINT = ''; // <— paste Apps Script /exec URL here
+
+const form = document.getElementById('bookForm');
+const submitBtn = document.getElementById('submitBtn');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  formMessage.classList.remove('is-visible', 'is-error');
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  try {
+    if (GMAIL_ENDPOINT) {
+      const res = await fetch(GMAIL_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          submittedAt: new Date().toISOString(),
+          source: 'downtowntjbrown.com booking form'
+        })
+      });
+      if (!res.ok) throw new Error('Network error');
+    } else {
+      console.log('[Booking submission — demo mode]', data);
+      await new Promise(r => setTimeout(r, 600));
+    }
+
+    formMessage.textContent = `Thanks, ${data.firstName}. Your request is in. TJ will reach out within 24 hours.`;
+    formMessage.classList.add('is-visible');
+    form.reset();
+  } catch (err) {
+    formMessage.textContent = 'Something went wrong. Email TJ directly or try again in a moment.';
+    formMessage.classList.add('is-visible', 'is-error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Request →';
+  }
+});
+</script>
+
+</body>
+</html>
