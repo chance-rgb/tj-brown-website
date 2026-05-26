@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TJ Brown — Coach · Private Lessons · Little Rock, Arkansas</title>
-<meta name="description" content="Hey, I'm TJ. UFC veteran, single dad, and full-time coach in Little Rock, Arkansas. Private lessons in striking, BJJ, and MMA — kids and adults welcome.">
-<meta name="keywords" content="TJ Brown, Downtown TJ Brown, UFC coach, MMA, Little Rock, Arkansas, private lessons, kids martial arts, BJJ, jiu jitsu, kickboxing">
+<title>TJ Brown — Train With a UFC Vet · Private Lessons & Seminars · Little Rock, AR</title>
+<meta name="description" content="Train with a UFC veteran. TJ Brown teaches private lessons, pad and mitt work, and runs seminars out of Little Rock, Arkansas — all ages, all levels. The only one in the state offering this.">
+<meta name="keywords" content="TJ Brown, Downtown TJ Brown, UFC coach Arkansas, MMA seminar, Little Rock MMA, private lessons, pad work, mitt work, BJJ, jiu jitsu, kickboxing, fight camp">
 
-<meta property="og:title" content="TJ Brown — Coach · Private Lessons · Little Rock">
-<meta property="og:description" content="UFC veteran teaching out of Little Rock, Arkansas. Kids, adults, beginners, competitors — everyone's welcome on the mat.">
+<meta property="og:title" content="Train With a UFC Vet — TJ Brown · Little Rock, AR">
+<meta property="og:description" content="UFC veteran. Private lessons, pad/mitt work, and seminars out of Little Rock, Arkansas. One of a handful of Arkansans to make it to the UFC — and the only one teaching this in the state.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,13 +131,13 @@ section { padding: 5.5rem 0; }
   color: var(--ink-body); transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--red); }
-.nav-cta {
+.nav-links a.nav-cta {
   padding: 0.65rem 1.25rem; background: var(--red); color: var(--bg-white);
   font-family: var(--font-condensed); font-weight: 600;
   font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
   transition: all 0.2s; border-radius: 4px;
 }
-.nav-cta:hover { background: var(--red-dark); color: var(--bg-white); }
+.nav-links a.nav-cta:hover { background: var(--red-dark); color: var(--bg-white); }
 .menu-toggle { display: none; width: 28px; height: 22px; position: relative; z-index: 102; }
 .menu-toggle span {
   display: block; width: 100%; height: 2px; background: var(--ink);
@@ -468,10 +468,143 @@ section { padding: 5.5rem 0; }
 .train-promise p {
   color: var(--ink-muted); font-size: 0.95rem; margin: 0;
 }
+
+/* Session format mini-grid */
+.session-formats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin: 0 0 4rem;
+}
+.session-format {
+  background: var(--bg-white);
+  border: 1px solid var(--blue-line);
+  border-left: 4px solid var(--blue);
+  padding: 1.25rem 1.5rem;
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 1.25rem; align-items: center;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s, border-left-color 0.2s;
+}
+.session-format:hover {
+  transform: translateY(-2px); box-shadow: var(--shadow-sm);
+  border-left-color: var(--red);
+}
+.session-format .fmt-time {
+  font-family: var(--font-display);
+  font-size: 2.4rem; line-height: 1;
+  color: var(--blue); letter-spacing: 0.02em;
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 70px;
+}
+.session-format .fmt-time .unit {
+  font-family: var(--font-condensed); font-weight: 600;
+  font-size: 0.7rem; letter-spacing: 0.18em;
+  color: var(--ink-muted); margin-top: 2px;
+}
+.session-format .fmt-body h5 {
+  font-family: var(--font-condensed); font-weight: 700;
+  font-size: 1.05rem; color: var(--ink);
+  margin-bottom: 0.25rem; letter-spacing: 0.02em;
+}
+.session-format .fmt-body p {
+  color: var(--ink-muted); font-size: 0.88rem;
+  line-height: 1.5; margin: 0;
+}
+
 @media (max-width: 880px) {
   .lessons-grid { grid-template-columns: 1fr; }
   .train-promise { grid-template-columns: 1fr; text-align: center; }
   .train-promise .icon-block { margin: 0 auto; }
+  .session-formats { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   SEMINARS — bring TJ to your gym
+   ========================================================================== */
+.seminars {
+  background: var(--bg-white);
+  padding: 5rem 0 5.5rem;
+  position: relative;
+}
+.seminars::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0;
+  height: 4px; background: var(--blue);
+}
+.seminars-header { text-align: center; margin-bottom: 3rem; }
+.seminars-header .lead { margin: 0 auto; max-width: 760px; }
+.seminars-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; margin-bottom: 3rem;
+}
+.seminar-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--blue-line);
+  border-top: 3px solid var(--blue);
+  padding: 1.5rem 1.6rem 1.75rem;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s, border-top-color 0.2s;
+}
+.seminar-card:hover {
+  transform: translateY(-3px); box-shadow: var(--shadow-md);
+  border-top-color: var(--red);
+}
+.seminar-card .seminar-icon {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.95rem; letter-spacing: 0.14em;
+  color: var(--bg-white); background: var(--blue);
+  padding: 4px 10px;
+  margin-bottom: 0.85rem;
+  border-radius: 2px;
+}
+.seminar-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.55rem; line-height: 1.05;
+  color: var(--ink); margin-bottom: 0.5rem;
+}
+.seminar-card p {
+  color: var(--ink-muted); font-size: 0.92rem; line-height: 1.55;
+  margin: 0;
+}
+.seminar-cta {
+  background: var(--ink);
+  color: var(--bg-white);
+  border-radius: 4px;
+  padding: 2.25rem 2.5rem;
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 1.75rem; align-items: center;
+}
+.seminar-cta .cta-mark {
+  width: 56px; height: 56px;
+  background: var(--blue); color: var(--bg-white);
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-size: 1.75rem;
+  border-radius: 2px;
+}
+.seminar-cta h4 {
+  font-family: var(--font-display);
+  font-size: 1.7rem; line-height: 1.05;
+  margin-bottom: 0.4rem; color: var(--bg-white);
+  letter-spacing: 0.01em;
+}
+.seminar-cta p {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.95rem; line-height: 1.55;
+  margin: 0; max-width: 640px;
+}
+.seminar-cta .btn-primary {
+  background: var(--bg-white); color: var(--ink);
+  border-color: var(--bg-white);
+}
+.seminar-cta .btn-primary:hover {
+  background: var(--blue); color: var(--bg-white); border-color: var(--blue);
+}
+@media (max-width: 880px) {
+  .seminars-grid { grid-template-columns: 1fr; }
+  .seminar-cta {
+    grid-template-columns: 1fr; text-align: center; gap: 1.25rem;
+  }
+  .seminar-cta .cta-mark { margin: 0 auto; }
+  .seminar-cta p { margin: 0 auto; }
 }
 
 /* ==========================================================================
@@ -771,6 +904,7 @@ section { padding: 5.5rem 0; }
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#train">Train</a></li>
+      <li><a href="#seminars">Seminars</a></li>
       <li><a href="#story">Story</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#media">Press</a></li>
@@ -789,13 +923,13 @@ section { padding: 5.5rem 0; }
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy reveal">
-        <div class="hero-greeting">Hey, I'm TJ</div>
+        <div class="hero-greeting">Hey, I'm TJ — UFC veteran, born &amp; raised in Arkansas</div>
         <h1>
           Come <span class="wave">train</span><br>
           with <span class="last">me.</span>
         </h1>
         <p class="hero-sub">
-          UFC veteran, lifelong Arkansan, full-time dad and coach. I teach private lessons out of Little Rock — striking, grappling, MMA, kids classes, fight prep. No ego, no pressure, just good work on the mat.
+          One of a handful of Arkansans to make it to the UFC — and the only one teaching this here at home. Private lessons, pad &amp; mitt work, fight prep, and seminars out of Little Rock. All ages, all levels. No ego, no pressure, just good work on the mat.
         </p>
         <div class="hero-ctas">
           <a href="#book" class="btn btn-primary">Book a Session →</a>
@@ -858,17 +992,17 @@ section { padding: 5.5rem 0; }
       <div class="about-headline reveal">
         <div class="eyebrow">About</div>
         <h2 class="section-title">A little about <span class="accent">me.</span></h2>
-        <p class="lead">Coach. Dad. Arkansan. Yes, I fought in the UFC — but on the mat, what matters is what we work on today.</p>
+        <p class="lead">UFC vet. Coach. Dad. Arkansan. The fight career is part of the story — but on the mat, what matters is what we work on today.</p>
       </div>
       <div class="about-body reveal">
         <p>
-          I'm TJ Brown. Born in Pine Bluff, raised in Arkansas, and I've called Little Rock home for over a decade. My day-to-day is pretty simple: teach in the mornings and afternoons, hang out with my son Kyler, and try to leave the gym a little better than I found it.
+          I'm TJ Brown. Born in Pine Bluff, raised in Arkansas, and I've called Little Rock home for over a decade. I'm one of a handful of Arkansans to ever make it to the UFC — and as far as I know, the only one of us currently teaching out of the state. That's not a flex; it's just rare. It means if you want to work with someone who's actually fought at the highest level, you don't have to leave home to find it.
         </p>
         <p>
           I came up at Westside MMA in Little Rock under Coach Roli Delgado, who later promoted me to BJJ black belt. I had a twelve-year career as a pro fighter — competed in the UFC from 2020 to 2024 — but honestly the best part of the journey has been the people I've gotten to work with along the way. Teaching is where I'm at my happiest.
         </p>
         <p>
-          If you're new to martial arts, welcome — I love working with beginners. If you're an active competitor and need a sharp pair of eyes, let's talk about your camp. If you're a parent looking for something positive for your kid, my kids' lessons are some of my favorite hours of the week.
+          Day-to-day I'm running private sessions, holding pads and mitts, putting people through 30- and 60-minute workouts, and working with whoever walks in — six years old or sixty, total beginner or active competitor. No age matters. If you want to put in honest work, we'll find a way.
         </p>
         <div class="about-quirks">
           <div class="quirk"><span class="icon">★</span><span class="text">Single dad</span></div>
@@ -906,36 +1040,36 @@ section { padding: 5.5rem 0; }
 <section class="train" id="train">
   <div class="container">
     <div class="train-intro reveal">
-      <div class="eyebrow">Train With Me</div>
+      <div class="eyebrow">Train With a UFC Vet</div>
       <h2 class="section-title">What we'll <span class="accent">work on.</span></h2>
       <p class="lead">
-        Pick the option that fits — or send me a message and we'll figure it out together. All experience levels welcome. I've got patient hands.
+        Pad &amp; mitt work, striking, grappling, fight prep — or a full MMA-style conditioning workout that mixes pads, weights, and agility. Pick the format below or message me and we'll build it around you. All ages, all levels. I've got patient hands.
       </p>
     </div>
 
     <div class="lessons-grid reveal">
-      <div class="lesson-card">
+      <div class="lesson-card featured">
         <div class="lesson-icon">1:1</div>
         <h3>1-on-1 Private</h3>
-        <div class="price">By appointment</div>
-        <p class="desc">Just you and me on the mat for an hour. You set the focus — striking, grappling, MMA, all of it.</p>
+        <div class="price">30 or 60 minutes</div>
+        <p class="desc">Just you and me on the mat. Pad work, mitt work, striking, grappling, fight prep — or a full MMA-style workout mixing pads with weight training and agility. You set the goal, I'll run the session.</p>
         <ul>
-          <li>60 minutes, your goals</li>
+          <li>30-min focus or full 60-min session</li>
+          <li>Pad/mitt work is my specialty</li>
           <li>Video review available</li>
-          <li>All levels welcome</li>
         </ul>
         <a href="#book" class="book-link">Book a session →</a>
       </div>
 
-      <div class="lesson-card featured">
-        <div class="lesson-icon">KID</div>
-        <h3>Kids Lessons</h3>
-        <div class="price">Ages 6 to 14</div>
-        <p class="desc">Fundamentals taught the right way. Discipline and confidence, no chaos. Parents are welcome to watch.</p>
+      <div class="lesson-card">
+        <div class="lesson-icon">ALL</div>
+        <h3>All Ages Welcome</h3>
+        <div class="price">No age matters</div>
+        <p class="desc">Six years old or sixty — if you want to learn, there's a spot for you. Kids classes are structured, safe, and fun. Adults get the same patient teaching at whatever pace works.</p>
         <ul>
-          <li>Striking &amp; jiu-jitsu fundamentals</li>
-          <li>Safe, fun, structured</li>
-          <li>Friendly check-ins with parents</li>
+          <li>Beginners &amp; first-timers welcome</li>
+          <li>Fundamentals taught the right way</li>
+          <li>Parents welcome to watch</li>
         </ul>
         <a href="#book" class="book-link">Book a session →</a>
       </div>
@@ -944,13 +1078,38 @@ section { padding: 5.5rem 0; }
         <div class="lesson-icon">GRP</div>
         <h3>Small Group</h3>
         <div class="price">2–4 athletes</div>
-        <p class="desc">Bring your training partners, your kid's team, or a few friends. Custom curriculum for the group.</p>
+        <p class="desc">Bring your training partners, your kid's team, or a few friends. Custom curriculum for the group — better $/head than private, same level of attention.</p>
         <ul>
           <li>Friends, family, or teammates</li>
-          <li>Better $/head than private</li>
-          <li>Seminars available</li>
+          <li>Pad &amp; mitt rotations</li>
+          <li>Custom curriculum for the group</li>
         </ul>
         <a href="#book" class="book-link">Book a session →</a>
+      </div>
+    </div>
+
+    <!-- Session format mini-grid -->
+    <div class="session-formats reveal">
+      <div class="session-format">
+        <div class="fmt-time">30<span class="unit">MIN</span></div>
+        <div class="fmt-body">
+          <h5>Focused Session</h5>
+          <p>One thing done well — a pad/mitt round, a specific technique, or a quick conditioning hit.</p>
+        </div>
+      </div>
+      <div class="session-format">
+        <div class="fmt-time">60<span class="unit">MIN</span></div>
+        <div class="fmt-body">
+          <h5>Full Session</h5>
+          <p>The full mix: pad/mitt work, technique drilling, live rounds or grappling, and conditioning.</p>
+        </div>
+      </div>
+      <div class="session-format">
+        <div class="fmt-time">MMA<span class="unit">MIX</span></div>
+        <div class="fmt-body">
+          <h5>MMA-Style Workout</h5>
+          <p>Pads, weights, agility, and movement — pro-fight conditioning scaled to your level.</p>
+        </div>
       </div>
     </div>
 
@@ -961,6 +1120,63 @@ section { padding: 5.5rem 0; }
         <p>You'll leave every session with one thing you didn't know how to do before. No fluff, no filler — just clean technique and honest reps. If you don't, the next one's on me.</p>
       </div>
       <a href="#book" class="btn btn-primary">Let's Go →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEMINARS — bring TJ to your gym
+     ============================================================ -->
+<section class="seminars" id="seminars">
+  <div class="container">
+    <div class="seminars-header reveal">
+      <div class="eyebrow">Seminars</div>
+      <h2 class="section-title">Bring me to <span class="accent">your gym.</span></h2>
+      <p class="lead">
+        I travel for seminars — your gym, your team, your event. A few hours with a UFC veteran is a real shot in the arm for any program, and it's something almost no one else in Arkansas can offer. Pick a focus below or message me with what your group needs.
+      </p>
+    </div>
+
+    <div class="seminars-grid reveal">
+      <div class="seminar-card">
+        <div class="seminar-icon">PAD</div>
+        <h4>Pad &amp; Mitt Clinic</h4>
+        <p>My specialty. I'll teach your coaches and athletes how to hold pads the right way, build combinations, and use mitt work as both a teaching tool and a conditioning piece.</p>
+      </div>
+      <div class="seminar-card">
+        <div class="seminar-icon">STR</div>
+        <h4>Striking Seminar</h4>
+        <p>Boxing, kickboxing, and MMA striking — stance, footwork, distance management, and the setups I used at the highest level. Scalable to beginner or competitor groups.</p>
+      </div>
+      <div class="seminar-card">
+        <div class="seminar-icon">BJJ</div>
+        <h4>BJJ &amp; Grappling</h4>
+        <p>Fundamentals, transitions, MMA-specific positions, and submissions I trust under pressure. Black belt under Roli Delgado, taught with the same patience I bring to private lessons.</p>
+      </div>
+      <div class="seminar-card">
+        <div class="seminar-icon">MMA</div>
+        <h4>MMA &amp; Fight Prep</h4>
+        <p>Cage work, fight IQ, camp structure, weight cuts, the mental side. If your fighters are headed for a card, I can plug in and sharpen what's already there.</p>
+      </div>
+      <div class="seminar-card">
+        <div class="seminar-icon">KID</div>
+        <h4>Kids Clinic</h4>
+        <p>Age-appropriate striking and grappling fundamentals with a focus on discipline and confidence. Parents are welcome to watch. Great for youth programs and team events.</p>
+      </div>
+      <div class="seminar-card">
+        <div class="seminar-icon">Q&amp;A</div>
+        <h4>Talk &amp; Q&amp;A</h4>
+        <p>UFC stories, the road from Arkansas to the big stage, mindset, sobriety, and family. Works as a standalone speaking spot or as the wind-down after a training block.</p>
+      </div>
+    </div>
+
+    <div class="seminar-cta reveal">
+      <div class="cta-mark">★</div>
+      <div class="cta-body">
+        <h4>Travel-friendly. Built around your group.</h4>
+        <p>Half-day, full-day, or weekend formats. In-state, out-of-state, or pro-team consults. Tell me what you're trying to build and I'll put a proposal together — pricing scales with travel and group size.</p>
+      </div>
+      <a href="#book" class="btn btn-primary">Request a Seminar →</a>
     </div>
   </div>
 </section>
@@ -1041,8 +1257,16 @@ section { padding: 5.5rem 0; }
         <div class="answer">More than okay — it's my favorite kind of student. The vast majority of people I teach are total beginners. Wear something comfortable, bring water, and show up. I'll handle the rest.</div>
       </details>
       <details class="faq-item">
-        <summary>My kid wants to try — what's the right age?</summary>
-        <div class="answer">I work with kids ages 6 to 14. Younger ones are about discipline, listening, and having fun. Older kids get more technique and structure. Parents are welcome to watch every session — I want you to feel comfortable.</div>
+        <summary>Is there an age limit?</summary>
+        <div class="answer">No age matters. I work with kids as young as six and adults well into their sixties. Younger kids are about discipline, listening, and having fun. Adults get whatever pace works — technique, pad work, conditioning, or just learning how to move better. Parents are welcome to watch every session.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How long are the sessions?</summary>
+        <div class="answer">Either 30 minutes or a full hour, depending on what you're after. A 30-minute slot is great for a focused pad/mitt round or a quick conditioning hit. The 60-minute session is the full mix — pad work, technique, live rounds or grappling, and conditioning. You can also book MMA-style workouts that combine pads, weights, and agility.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do you focus on pad and mitt work?</summary>
+        <div class="answer">Yes — pad and mitt work is one of my specialties. It's how I learned, how I trained at the pro level, and it's one of the best tools out there for teaching technique, building combinations, and getting in real conditioning at the same time. If that's what you're after, you're in the right spot.</div>
       </details>
       <details class="faq-item">
         <summary>What should I wear?</summary>
@@ -1054,15 +1278,15 @@ section { padding: 5.5rem 0; }
       </details>
       <details class="faq-item">
         <summary>How much does it cost?</summary>
-        <div class="answer">Depends on the format (private, kids, small group, fight camp) and how often you want to train. Send me a booking request with your goals and I'll come back with options that make sense for you.</div>
+        <div class="answer">Depends on the format (private, small group, fight camp, seminar) and how often you want to train. Send me a booking request with your goals and I'll come back with options that make sense for you.</div>
       </details>
       <details class="faq-item">
         <summary>Are you still fighting?</summary>
         <div class="answer">Off and on. Most of my time goes to coaching now. If I'm in camp I'll let you know — but the lessons keep rolling.</div>
       </details>
       <details class="faq-item">
-        <summary>Do you do seminars?</summary>
-        <div class="answer">Yes — at your gym, my gym, anywhere. Reach out through the booking form and tell me what your group wants to focus on. I'll travel for the right fit.</div>
+        <summary>Do you run seminars at other gyms?</summary>
+        <div class="answer">Yes — and it's one of my favorite things to do. I'll come to your gym for a pad/mitt clinic, a striking or BJJ seminar, fight prep work, a kids clinic, or a talk &amp; Q&amp;A. Half-day, full-day, or weekend formats. In-state, out-of-state, or pro-team consults. Reach out through the booking form and tell me what your group needs — I'll put a proposal together with travel and pricing.</div>
       </details>
     </div>
   </div>
@@ -1136,13 +1360,13 @@ section { padding: 5.5rem 0; }
         <div class="eyebrow">Book a Session</div>
         <h2>Let's get on the mat.</h2>
         <p>
-          Tell me a bit about what you're looking for and I'll get back to you within 24 hours to lock in a time. Sessions are held in Little Rock, Arkansas. Travel and seminar requests welcome.
+          Tell me what you're looking for — a 30-minute pad round, a full hour, an MMA-style workout, or a seminar at your gym — and I'll get back to you within 24 hours to lock it in. Sessions run out of Little Rock, Arkansas. Travel welcome.
         </p>
         <ul class="book-checklist">
           <li>24-hour response time</li>
-          <li>Flexible scheduling</li>
-          <li>Kids, adults, beginners, fighters</li>
-          <li>Travel available for seminars</li>
+          <li>30 or 60-minute sessions</li>
+          <li>All ages, all levels — no age matters</li>
+          <li>Seminars: in-state, out-of-state, anywhere</li>
         </ul>
       </div>
 
@@ -1168,11 +1392,14 @@ section { padding: 5.5rem 0; }
             <label for="sessionType">Session Type <span class="req">*</span></label>
             <select id="sessionType" name="sessionType" required>
               <option value="">Select…</option>
-              <option value="private">1-on-1 Private</option>
-              <option value="kids">Kids Lesson (ages 6–14)</option>
+              <option value="private-30">1-on-1 Private — 30 min</option>
+              <option value="private-60">1-on-1 Private — 60 min</option>
+              <option value="pad-mitt">Pad &amp; Mitt Work Session</option>
+              <option value="mma-mix">MMA-Style Workout (pads + weights + agility)</option>
+              <option value="kids">Kids Session</option>
               <option value="group">Small Group (2–4)</option>
               <option value="fight-prep">Fight Camp / Fight Prep</option>
-              <option value="seminar">Seminar / Speaking</option>
+              <option value="seminar">Seminar / Bring TJ to my gym</option>
               <option value="other">Other / Not Sure Yet</option>
             </select>
           </div>
